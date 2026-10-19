@@ -13,6 +13,19 @@ public class ProductService {
 
     private Long nextId = 1L;
 
+    public ProductService() {
+        products.add(new DigitalProduct(nextId++,
+                "E-book: Java Basics",
+                9.99,
+                "https://example.com/java-basics.pdf",
+                4.5));
+        products.add(new PhysicalProduct(nextId++,
+                "Wireless Mouse",
+                24.99,
+                0.12,
+                "11x6x4 cm"));
+    }
+
     public List<Product> getAllProducts() {
         return products;
     }

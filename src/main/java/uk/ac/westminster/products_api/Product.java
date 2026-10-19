@@ -1,5 +1,14 @@
 package uk.ac.westminster.products_api;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY,
+        property = "type", defaultImpl = Product.class)
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = DigitalProduct.class, name = "digital"),
+        @JsonSubTypes.Type(value = PhysicalProduct.class, name = "physical")
+})
 public class Product {
 
     private Long id;
