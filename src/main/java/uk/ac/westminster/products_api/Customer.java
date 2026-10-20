@@ -12,6 +12,7 @@ public class Customer {
         this.email = email;
         this.address = address;
     }
+
     public Long getId() { return id; }
     public String getName() { return name; }
     public String getEmail() { return email; }
